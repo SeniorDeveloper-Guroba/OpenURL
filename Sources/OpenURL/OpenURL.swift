@@ -26,6 +26,12 @@ public struct OpenURL {
                 
             case .urlList(let urlList):
                 openURL = URL(string: urlList.rawValue)
+                
+            case .telegram(let url):
+                let split = url.absoluteString.split(separator: "=")
+                let urlString = "https://telegram.im/@\(split.last ?? "")"
+                openURL = URL(string: urlString)
+           
         }
         guard let openURL = openURL else { return }
         guard UIApplication.shared.canOpenURL(openURL) else { return }
@@ -36,6 +42,7 @@ public struct OpenURL {
     public enum URLType {
         case string(String, isDeletePrecent: Bool)
         case url(URL, isDeletePrecent: Bool)
+        case telegram(URL)
         case urlList(URLList)
     }
     
