@@ -40,7 +40,7 @@ public struct OpenURL {
     }
     
     public enum URLList: String {
-        case telegrammApp = "https://itunes.apple.com/ru/app/telegram-messenger/id686449807?mt=8"
+        case telegramApp = "https://itunes.apple.com/ru/app/telegram-messenger/id686449807?mt=8"
     }
     
     public init(){}
