@@ -45,5 +45,3 @@ public struct OpenURL {
     
     public init(){}
 }
-
-
